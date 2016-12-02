@@ -1,0 +1,630 @@
+2016-12-01 4:26:57 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 34
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+LINE: 92
+LINE: 104
+LINE: 142
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 35
+LINE: 41
+LINE: 47
+FILE: system/library/template/basic.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 17
+----------------------------------------------------------------
+MOD: Modification Default
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 34
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+LINE: 92
+LINE: 104
+LINE: 142
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 35
+LINE: 41
+LINE: 47
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Add new position</font>
+FILE: catalog/controller/common/header.php
+CODE: $data['links'] = $this->document->getLinks();
+LINE: 37
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_empty'] = $this->language->get('text_empty');
+LINE: 52
+FILE: catalog/controller/common/footer.php
+CODE: $data['newsletter'] = $this->url->link('account/newsletter', '', true);
+LINE: 50
+FILE: catalog/controller/product/compare.php
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 58
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <td class="text-left"><select name="layout_module[<?php echo $module_row; ?>][position]" class="form-control">
+LINE: 113
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 198
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Add Newsletter Menu</font>
+FILE: admin/controller/common/menu.php
+CODE: $this->load->language('common/menu');
+LINE: 7
+FILE: admin/language/de-DE/common/menu.php
+CODE: $_['text_system']                      = 'System';
+NOT FOUND!
+FILE: admin/language/en-gb/common/menu.php
+CODE: $_['text_system']                      = 'System';
+LINE: 68
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_system']                      = 'System';
+LINE: 70
+FILE: admin/controller/marketing/contact.php
+CODE: case 'newsletter':
+LINE: 127
+FILE: admin/model/customer/customer.php
+CODE: class ModelCustomerCustomer extends Model {
+LINE: 8
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $custom_field; ?>"><?php echo $text_custom_field; ?></a></li>
+LINE: 113
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Add Product Special Countdown</font>
+FILE: catalog/controller/product/product.php
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 471
+FILE: catalog/controller/product/category.php
+CODE: $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+LINE: 199
+CODE: $special = false;
+LINE: 204
+CODE: 'product_id'  => $result['product_id'],
+LINE: 223
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss - Search autocomplete</font>
+FILE: catalog/controller/common/search.php
+CODE: return $this->load->view('common/search', $data);
+LINE: 21
+FILE: catalog/view/theme/bt_comohos/template/common/search.tpl
+CODE: </div>
+LINE: 40
+LINE: 73
+LINE: 106
+FILE: catalog/view/theme/default/template/common/search.tpl
+CODE: </div>
+LINE: 37
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss Layout</font>
+CODE: $data['layout'] = $this->url->link('design/layout', 'token=' . $this->session->data['token'], true);
+LINE: 142
+CODE: <li><a href="<?php echo $layout; ?>"><?php echo $text_layout; ?></a></li>
+LINE: 85
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss Refine Search</font>
+CODE: $this->load->language('common/menu');
+LINE: 8
+CODE: $_['text_system']                      = 'System';
+NOT FOUND!
+CODE: $_['text_system']                      = 'System';
+LINE: 69
+CODE: $_['text_system']                      = 'System';
+LINE: 71
+CODE: <li><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>
+LINE: 10
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss Testimonial</font>
+CODE: $this->load->language('common/menu');
+LINE: 8
+CODE: $_['text_system']                      = 'System';
+NOT FOUND!
+CODE: $_['text_system']                      = 'System';
+LINE: 69
+CODE: $_['text_system']                      = 'System';
+LINE: 71
+CODE: <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
+LINE: 128
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Creat All Layout</font>
+FILE: admin/view/template/design/layout_list.tpl
+CODE: <div class="pull-right"><a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+LINE: 4
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Seo Boss Blog</font>
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 58
+CODE: if ($url[0] == 'category_id') {
+LINE: 30
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 61
+CODE: } elseif (isset($this->request->get['path'])) {
+LINE: 76
+CODE: $this->request->get['route'] = 'information/information';
+LINE: 90
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 111
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'category_id=" . (int)$category . "'");
+LINE: 125
+CODE: } elseif ($key == 'path') {
+LINE: 121
+----------------------------------------------------------------
+MOD: Ajax Quick Checkout
+FILE: catalog/controller/checkout/checkout.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout.tpl')) {
+NOT FOUND!
+CODE: $this->response->setOutput($this->load->view('checkout/checkout', $data));
+LINE: 95
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+FILE: system/library/tax.php
+CODE: final class Tax {
+LINE: 7
+----------------------------------------------------------------
+2016-12-02 4:45:51 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 34
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+LINE: 92
+LINE: 104
+LINE: 142
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 35
+LINE: 41
+LINE: 47
+FILE: system/library/template/basic.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 17
+----------------------------------------------------------------
+MOD: Modification Default
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 34
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+LINE: 92
+LINE: 104
+LINE: 142
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 35
+LINE: 41
+LINE: 47
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Add new position</font>
+FILE: catalog/controller/common/header.php
+CODE: $data['links'] = $this->document->getLinks();
+LINE: 37
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_empty'] = $this->language->get('text_empty');
+LINE: 52
+FILE: catalog/controller/common/footer.php
+CODE: $data['newsletter'] = $this->url->link('account/newsletter', '', true);
+LINE: 50
+FILE: catalog/controller/product/compare.php
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 58
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <td class="text-left"><select name="layout_module[<?php echo $module_row; ?>][position]" class="form-control">
+LINE: 113
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 198
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Add Newsletter Menu</font>
+FILE: admin/controller/common/menu.php
+CODE: $this->load->language('common/menu');
+LINE: 7
+FILE: admin/language/de-DE/common/menu.php
+CODE: $_['text_system']                      = 'System';
+NOT FOUND!
+FILE: admin/language/en-gb/common/menu.php
+CODE: $_['text_system']                      = 'System';
+LINE: 68
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_system']                      = 'System';
+LINE: 70
+FILE: admin/controller/marketing/contact.php
+CODE: case 'newsletter':
+LINE: 127
+FILE: admin/model/customer/customer.php
+CODE: class ModelCustomerCustomer extends Model {
+LINE: 8
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $custom_field; ?>"><?php echo $text_custom_field; ?></a></li>
+LINE: 113
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Add Product Special Countdown</font>
+FILE: catalog/controller/product/product.php
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 471
+FILE: catalog/controller/product/category.php
+CODE: $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+LINE: 199
+CODE: $special = false;
+LINE: 204
+CODE: 'product_id'  => $result['product_id'],
+LINE: 223
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss - Search autocomplete</font>
+FILE: catalog/controller/common/search.php
+CODE: return $this->load->view('common/search', $data);
+LINE: 21
+FILE: catalog/view/theme/bt_comohos/template/common/search.tpl
+CODE: </div>
+LINE: 40
+LINE: 73
+LINE: 106
+FILE: catalog/view/theme/default/template/common/search.tpl
+CODE: </div>
+LINE: 37
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss Layout</font>
+CODE: $data['layout'] = $this->url->link('design/layout', 'token=' . $this->session->data['token'], true);
+LINE: 142
+CODE: <li><a href="<?php echo $layout; ?>"><?php echo $text_layout; ?></a></li>
+LINE: 85
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss Refine Search</font>
+CODE: $this->load->language('common/menu');
+LINE: 8
+CODE: $_['text_system']                      = 'System';
+NOT FOUND!
+CODE: $_['text_system']                      = 'System';
+LINE: 69
+CODE: $_['text_system']                      = 'System';
+LINE: 71
+CODE: <li><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>
+LINE: 10
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss Testimonial</font>
+CODE: $this->load->language('common/menu');
+LINE: 8
+CODE: $_['text_system']                      = 'System';
+NOT FOUND!
+CODE: $_['text_system']                      = 'System';
+LINE: 69
+CODE: $_['text_system']                      = 'System';
+LINE: 71
+CODE: <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
+LINE: 128
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Creat All Layout</font>
+FILE: admin/view/template/design/layout_list.tpl
+CODE: <div class="pull-right"><a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+LINE: 4
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Seo Boss Blog</font>
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 58
+CODE: if ($url[0] == 'category_id') {
+LINE: 30
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 61
+CODE: } elseif (isset($this->request->get['path'])) {
+LINE: 76
+CODE: $this->request->get['route'] = 'information/information';
+LINE: 90
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 111
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'category_id=" . (int)$category . "'");
+LINE: 125
+CODE: } elseif ($key == 'path') {
+LINE: 121
+----------------------------------------------------------------
+MOD: Ajax Quick Checkout
+FILE: catalog/controller/checkout/checkout.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout.tpl')) {
+NOT FOUND!
+CODE: $this->response->setOutput($this->load->view('checkout/checkout', $data));
+LINE: 95
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+FILE: system/library/tax.php
+CODE: final class Tax {
+LINE: 7
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+2016-12-02 4:46:54 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 34
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+LINE: 92
+LINE: 104
+LINE: 142
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 35
+LINE: 41
+LINE: 47
+FILE: system/library/template/basic.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 17
+----------------------------------------------------------------
+MOD: Modification Default
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 34
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+LINE: 92
+LINE: 104
+LINE: 142
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 35
+LINE: 41
+LINE: 47
+----------------------------------------------------------------
+MOD: Alkod Multi Seller Extension pro
+FILE: admin/language/en-gb/report/customer_activity.php
+CODE: // Text
+LINE: 16
+FILE: admin/language/en-gb/dashboard/activity.php
+CODE: // Text
+LINE: 15
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <div class="col-lg-3 col-md-3 col-sm-6"><?php echo $online; ?></div>
+LINE: 27
+FILE: admin/controller/common/dashboard.php
+CODE: $data['online'] = $this->load->controller('dashboard/online');
+LINE: 45
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="dashboard">
+LINE: 19
+FILE: admin/controller/common/menu.php
+CODE: $this->load->language('common/menu');
+LINE: 28
+FILE: admin/language/en-gb/common/menu.php
+CODE: // Text
+LINE: 10
+FILE: catalog/view/theme/bt_comohos/template/common/header.tpl
+CODE: <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/header.tpl
+CODE: <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>
+LINE: 63
+FILE: catalog/controller/common/header.php
+CODE: $data['logged'] = $this->customer->isLogged();
+LINE: 94
+CODE: $data['account'] = $this->url->link('account/account',
+LINE: 109
+FILE: catalog/language/en-gb/common/header.php
+CODE: // Text
+LINE: 7
+FILE: catalog/view/theme/bt_comohos/template/product/product.tpl
+CODE: <?php if ($reward) { ?>
+LINE: 487
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <?php if ($reward) { ?>
+LINE: 469
+FILE: catalog/controller/product/product.php
+CODE: $data['reward'] = $product_info['reward'];
+LINE: 394
+FILE: catalog/language/en-gb/product/product.php
+CODE: // Text
+LINE: 4
+FILE: catalog/view/theme/bt_comohos/template/account/account.tpl
+CODE: <?php echo $content_bottom; ?></div>
+LINE: 61
+FILE: catalog/view/theme/default/template/account/account.tpl
+CODE: <?php echo $content_bottom; ?></div>
+LINE: 59
+FILE: catalog/controller/account/account.php
+CODE: $data['edit'] = $this->url->link('account/edit', '', true);
+LINE: 72
+FILE: catalog/language/en-gb/account/account.php
+CODE: // Text
+LINE: 11
+FILE: system/library/cart/customer.php
+CODE: private $customer_id;
+LINE: 7
+CODE: $this->customer_id = $customer_query->row['customer_id'];
+LINE: 30
+LINE: 67
+CODE: $this->customer_id = '';
+LINE: 92
+CODE: public function isLogged() {
+LINE: 121
+FILE: admin/controller/common/header.php
+CODE: // Customers
+LINE: 92
+CODE: $data['alerts'] = $customer_total + $product_total + $review_total + $return_total + $affiliate_total;
+LINE: 133
+FILE: admin/language/en-gb/common/header.php
+CODE: // Text
+LINE: 6
+FILE: admin/view/template/common/header.tpl
+CODE: <ul class="nav pull-right">
+LINE: 52
+FILE: admin/language/en-gb/setting/setting.php
+CODE: // Text
+LINE: 36
+FILE: admin/controller/setting/setting.php
+CODE: $data['tab_server'] = $this->language->get('tab_server');
+LINE: 594
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-server" data-toggle="tab"><?php echo $tab_server; ?></a></li>
+LINE: 41
+CODE: <div class="tab-pane" id="tab-server">
+LINE: 1882
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Add new position</font>
+CODE: $data['links'] = $this->document->getLinks();
+LINE: 37
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_empty'] = $this->language->get('text_empty');
+LINE: 52
+FILE: catalog/controller/common/footer.php
+CODE: $data['newsletter'] = $this->url->link('account/newsletter', '', true);
+LINE: 50
+FILE: catalog/controller/product/compare.php
+CODE: $data['button_cart'] = $this->language->get('button_cart');
+LINE: 58
+FILE: admin/view/template/design/layout_form.tpl
+CODE: <td class="text-left"><select name="layout_module[<?php echo $module_row; ?>][position]" class="form-control">
+LINE: 113
+CODE: html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+LINE: 198
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Add Newsletter Menu</font>
+CODE: $this->load->language('common/menu');
+LINE: 7
+FILE: admin/language/de-DE/common/menu.php
+CODE: $_['text_system']                      = 'System';
+NOT FOUND!
+CODE: $_['text_system']                      = 'System';
+LINE: 77
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_system']                      = 'System';
+LINE: 70
+FILE: admin/controller/marketing/contact.php
+CODE: case 'newsletter':
+LINE: 127
+FILE: admin/model/customer/customer.php
+CODE: class ModelCustomerCustomer extends Model {
+LINE: 8
+CODE: <li><a href="<?php echo $custom_field; ?>"><?php echo $text_custom_field; ?></a></li>
+LINE: 131
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Add Product Special Countdown</font>
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 596
+FILE: catalog/controller/product/category.php
+CODE: $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+LINE: 199
+CODE: $special = false;
+LINE: 204
+CODE: 'product_id'  => $result['product_id'],
+LINE: 223
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss - Search autocomplete</font>
+FILE: catalog/controller/common/search.php
+CODE: return $this->load->view('common/search', $data);
+LINE: 21
+FILE: catalog/view/theme/bt_comohos/template/common/search.tpl
+CODE: </div>
+LINE: 40
+LINE: 73
+LINE: 106
+FILE: catalog/view/theme/default/template/common/search.tpl
+CODE: </div>
+LINE: 37
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss Layout</font>
+CODE: $data['layout'] = $this->url->link('design/layout', 'token=' . $this->session->data['token'], true);
+LINE: 167
+CODE: <li><a href="<?php echo $layout; ?>"><?php echo $text_layout; ?></a></li>
+LINE: 103
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss Refine Search</font>
+CODE: $this->load->language('common/menu');
+LINE: 8
+CODE: $_['text_system']                      = 'System';
+NOT FOUND!
+CODE: $_['text_system']                      = 'System';
+LINE: 78
+CODE: $_['text_system']                      = 'System';
+LINE: 71
+CODE: <li><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>
+LINE: 28
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Boss Testimonial</font>
+CODE: $this->load->language('common/menu');
+LINE: 8
+CODE: $_['text_system']                      = 'System';
+NOT FOUND!
+CODE: $_['text_system']                      = 'System';
+LINE: 78
+CODE: $_['text_system']                      = 'System';
+LINE: 71
+CODE: <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
+LINE: 146
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Creat All Layout</font>
+FILE: admin/view/template/design/layout_list.tpl
+CODE: <div class="pull-right"><a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+LINE: 4
+----------------------------------------------------------------
+MOD: <font color="#0000"><b>Seo Boss Blog</font>
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 58
+CODE: if ($url[0] == 'category_id') {
+LINE: 30
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 61
+CODE: } elseif (isset($this->request->get['path'])) {
+LINE: 76
+CODE: $this->request->get['route'] = 'information/information';
+LINE: 90
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 111
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'category_id=" . (int)$category . "'");
+LINE: 125
+CODE: } elseif ($key == 'path') {
+LINE: 121
+----------------------------------------------------------------
+MOD: Ajax Quick Checkout
+FILE: catalog/controller/checkout/checkout.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout.tpl')) {
+NOT FOUND!
+CODE: $this->response->setOutput($this->load->view('checkout/checkout', $data));
+LINE: 95
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 98
+FILE: system/library/cart/tax.php
+CODE: final class Tax {
+LINE: 8
+FILE: system/library/tax.php
+CODE: final class Tax {
+LINE: 7
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
